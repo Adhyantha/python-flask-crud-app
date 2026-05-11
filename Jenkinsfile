@@ -1,8 +1,8 @@
 pipeline{
     agent any
     environment{
-        IMAGE_NAME: 'pythonflaskcrudapp'
-        IMAGE_TAG: 'v1'
+        IMAGE_NAME= 'pythonflaskcrudapp'
+        IMAGE_TAG= 'v1'
     }
     stages{
         stage('Clone Source'){
