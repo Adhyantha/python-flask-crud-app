@@ -6,8 +6,8 @@ pipepline{
     stages{
         stage('Clone Source'){
             steps{
-                git branch: 'main',
-                url: 'https://github.com/Adhyantha/python-flask-crud-app.git'
+                git url: 'https://github.com/Adhyantha/python-flask-crud-app.git',
+                branch: 'main'
             }
         }
         stage('Build Docker Image'){
