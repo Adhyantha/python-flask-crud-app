@@ -1,8 +1,7 @@
 pipepline{
     agent any
     environment{
-        IMAGE_NAME="pythonflaskcrudapp"
-        IMAGE_TAG="v1"
+        KUBECONFIG: 'C:\\Users\\Admin\\.kube\\config'
     }
     stages{
         stage('Clone Source'){
