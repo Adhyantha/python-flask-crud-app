@@ -1,0 +1,22 @@
+recplicaCount: 1
+
+image:
+  repository: pythonflaskcrudapp
+  tag: v1
+
+service:
+  type: NodePort
+  port: 5000
+  nodePort: 30004
+
+serviceAccount:
+  create: false
+
+ingress:
+  enabled: false
+
+httpRoute:
+  enabled: false
+
+autoscaling:
+  enabled: false
