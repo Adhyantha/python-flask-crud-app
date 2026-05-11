@@ -1,4 +1,4 @@
-pipepline{
+pipeline{
     agent any
     environment{
         KUBECONFIG: 'C:\\Users\\Admin\\.kube\\config'
