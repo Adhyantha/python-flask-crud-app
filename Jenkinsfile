@@ -26,16 +26,16 @@ pipeline{
         stage('Deploy MySQL'){
             steps{
                 dir('kubernetes'){
-                    bat 'kubectl apply -f mysql-deployment.yaml'
-                    bat 'kubectl apply -f mysql-service.yaml'
+                    bat 'kubectl apply -f mysql-deployment.yaml --validate=false'
+                    bat 'kubectl apply -f mysql-service.yaml --validate=false'
                 }
             }
         }
         stage('Deploy Flask App'){
             steps{
                 dir('kubernetes'){
-                    bat 'kubectl apply -f app-deployment.yaml'
-                    bat 'kubectl apply -f app-service.yaml'
+                    bat 'kubectl apply -f app-deployment.yaml --validate=false'
+                    bat 'kubectl apply -f app-service.yaml --validate=false'
                 }
             }
         }
