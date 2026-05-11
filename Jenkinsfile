@@ -3,6 +3,7 @@ pipeline{
     environment{
         IMAGE_NAME= 'pythonflaskcrudapp'
         IMAGE_TAG= 'v1'
+        KUBECONFIG='C:\\Users\\Admin\\.kube\\config'
     }
     stages{
         stage('Clone Source'){
@@ -26,16 +27,16 @@ pipeline{
         stage('Deploy MySQL'){
             steps{
                 dir('kubernetes'){
-                    bat 'kubectl apply -f mysql-deployment.yaml --validate=false'
-                    bat 'kubectl apply -f mysql-service.yaml --validate=false'
+                    bat 'kubectl apply -f mysql-deployment.yaml'
+                    bat 'kubectl apply -f mysql-service.yaml'
                 }
             }
         }
         stage('Deploy Flask App'){
             steps{
                 dir('kubernetes'){
-                    bat 'kubectl apply -f app-deployment.yaml --validate=false'
-                    bat 'kubectl apply -f app-service.yaml --validate=false'
+                    bat 'kubectl apply -f app-deployment.yaml'
+                    bat 'kubectl apply -f app-service.yaml'
                 }
             }
         }
